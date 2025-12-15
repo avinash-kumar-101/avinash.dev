@@ -9,7 +9,7 @@ const Projects = () => {
       title: "Portfolio Website",
       desc: "A modern portfolio website built using React, TailwindCSS, and Framer Motion.",
       tech: ["React", "TailwindCSS", "Framer Motion"],
-      link: "https://your-live-demo-url.com",
+      link: "https://avinash-portfolio-gold.vercel.app/",
       github: "https://github.com/your-username/portfolio",
     },
     {
