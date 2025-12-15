@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-primary text-textMain font-sans;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
