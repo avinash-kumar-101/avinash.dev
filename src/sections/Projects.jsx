@@ -10,7 +10,7 @@ const Projects = () => {
       desc: "A modern portfolio website built using React, TailwindCSS, and Framer Motion.",
       tech: ["React", "TailwindCSS", "Framer Motion"],
       link: "https://avinash-portfolio-gold.vercel.app",
-      github: "https://github.com/your-username/portfolio",
+      github: "https://github.com/avinash-kumar-101/avinash-portfolio",
     },
     {
       title: "Movie Search App",
