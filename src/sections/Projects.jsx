@@ -1,30 +1,28 @@
-
-
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   const projects = [
     {
+      title: "FlickFinder – Movie Discovery App",
+      desc: "A modern movie discovery platform with real-time search, trending movies, trailers, and favorites feature using TMDB REST API.",
+      tech: ["React", "TMDB API", "REST", "CSS", "Vercel"],
+      link: "https://flickfinder-avi.vercel.app/",
+      github: "https://github.com/avinash-kumar-101/FlickFinder",
+    },
+    {
+      title: "Smart Meeting Assistant",
+      desc: "An AI-powered video meeting platform with real-time conferencing and automated meeting summaries using Gemini AI.",
+      tech: ["Next.js", "Stream SDK", "Gemini AI", "JavaScript"],
+      link: "https://your-live-demo-url.com",
+      github: "https://github.com/avinash-kumar-101/Smart-Meeting-Assistant",
+    },
+    {
       title: "Portfolio Website",
-      desc: "A modern portfolio website built using React, TailwindCSS, and Framer Motion.",
+      desc: "A responsive personal portfolio showcasing projects and skills with smooth animations and modern UI design.",
       tech: ["React", "TailwindCSS", "Framer Motion"],
       link: "https://avinash-portfolio-gold.vercel.app",
       github: "https://github.com/avinash-kumar-101/avinash-portfolio",
-    },
-    {
-      title: "Movie Search App",
-      desc: "A movie search engine built using JavaScript and TMDB API.",
-      tech: ["JavaScript", "API", "CSS"],
-      link: "https://your-live-demo-url.com",
-      github: "https://github.com/avinash-kumar-101",
-    },
-    {
-      title: "Zippora-Stay Rental Platform",
-      desc: "A full-stack stay-rental application with CRUD-based listing management, user authentication, and end-to-end booking features.",
-      tech: ["MongoDB", "Express", "React", "Node.js"],
-      link: "https://your-live-demo-url.com",
-      github: "https://github.com/avinash-kumar-101",
     },
   ];
 
@@ -50,7 +48,9 @@ const Projects = () => {
                          transition-all"
             >
               {/* Title */}
-              <h3 className="text-2xl font-semibold text-slate-100">{project.title}</h3>
+              <h3 className="text-2xl font-semibold text-slate-100">
+                {project.title}
+              </h3>
 
               {/* Description */}
               <p className="text-slate-400 text-sm mt-2">{project.desc}</p>
@@ -70,8 +70,6 @@ const Projects = () => {
 
               {/* Buttons */}
               <div className="flex gap-3 mt-6">
-
-                {/* LIVE DEMO */}
                 <a
                   href={project.link}
                   target="_blank"
@@ -81,7 +79,6 @@ const Projects = () => {
                   Live Demo
                 </a>
 
-                {/* GITHUB BUTTON WITH ICON */}
                 <a
                   href={project.github}
                   target="_blank"
@@ -92,7 +89,6 @@ const Projects = () => {
                   Code
                 </a>
               </div>
-
             </motion.div>
           ))}
         </div>
