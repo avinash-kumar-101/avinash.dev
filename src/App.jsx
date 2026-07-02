@@ -7,26 +7,31 @@ import Certificates from "./sections/Certificates"
 import Experience from "./sections/Experience"
 import Projects from "./sections/Projects"
 import Contact from "./sections/Contact"
+import Footer from "./sections/Footer"
 
 function App() {
   return (
-    <div className="min-h-screen bg-primary text-textMain">
+    <div className="min-h-screen bg-[#f8f4ee] text-[#111827] overflow-x-hidden">
       <Navbar />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-24 lg:space-y-32">
+      <main>
         <Hero />
-        <About />
-        <Skills />
-        <Services />
-        <Certificates />
-        <Experience />
-        <Projects />
-        <Contact />
+
+        {/* Full-bleed wrapper — sections handle their own full-width via negative margins */}
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Services />
+          <Certificates />
+          <Contact />
+        </div>
       </main>
+
+      <Footer />
     </div>
   )
 }
 
 export default App
-
-

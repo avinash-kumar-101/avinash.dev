@@ -4,15 +4,17 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Inter", "system-ui", "sans-serif"],
+        script: ["Dancing Script", "Allura", "cursive"],
       },
       colors: {
-        primary: "#0F172A",
-        secondary: "#1E293B",
-        accent: "#3B82F6",
-        textMain: "#F8FAFC",
+        primary: "#f8f4ee",
+        secondary: "#f7efe6",
+        accent: "#8b5727",
+        textMain: "#111827",
       },
       boxShadow: {
-        "soft-glow": "0 0 40px rgba(59,130,246,0.35)",
+        "soft-glow": "0 0 40px rgba(139,87,39,0.15)",
       },
       borderRadius: {
         xl: "0.9rem",

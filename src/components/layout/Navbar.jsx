@@ -1,71 +1,143 @@
-import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { FiDownload, FiMenu, FiX, FiArrowRight } from "react-icons/fi";
+import logoo from "../../assets/logoo.png";
+
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Services", href: "#services" },
+  { label: "Certifications", href: "#certificates" },
+  { label: "Contact", href: "#contact" },
+];
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("#home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = navLinks.map((link) => link.href.substring(1));
+      let current = "";
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && window.scrollY >= element.offsetTop - window.innerHeight / 3) {
+          current = "#" + section;
+        }
+      }
+      if (current) setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      {/* ===== HEADER ===== */}
-      <header className="fixed top-0 inset-x-0 z-50 bg-primary/80 backdrop-blur-xl border-b border-slate-800">
-        <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
+            ? "bg-[#fbf8f4]/80 shadow-[0_8px_30px_rgba(17,24,39,0.08)] backdrop-blur-xl border-b border-[#111827]/10 py-0"
+            : "bg-[#faf7f2]/0 border-transparent py-2"
+          }`}
+      >
+        <nav className="relative mx-auto flex h-24 w-full max-w-[1440px] items-center justify-between gap-6 px-5 sm:px-8 lg:h-28 lg:px-10">
+          <a
+            href="#home"
+            className="inline-flex items-center transition-opacity hover:opacity-80"
+            aria-label="Avinash home"
+          >
+            <img src={logoo} alt="Avinash" className="h-24 w-auto object-contain sm:h-28 lg:h-32" />
+          </a>
 
-          {/* LOGO */}
-          <h1 className="text-lg font-semibold text-textMain">
-            Avinash Kumar
-          </h1>
-
-          {/* DESKTOP LINKS (UNCHANGED) */}
-          <div className="hidden sm:flex gap-6 text-sm text-slate-300">
-            <a href="#about" className="hover:text-accent">About</a>
-            <a href="#skills" className="hover:text-accent">Skills</a>
-            <a href="#services" className="hover:text-accent">Services</a>
-            <a href="#projects" className="hover:text-accent">Projects</a>
-            <a href="#contact" className="hover:text-accent">Contact</a>
+          <div className="hidden items-center gap-8 text-[0.95rem] font-medium text-[#111827] lg:flex">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`group relative py-2 transition-colors duration-300 ease-out hover:text-[#8b5727] ${activeSection === link.href ? "text-[#8b5727]" : ""
+                  }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute inset-x-0 -bottom-1 h-[2px] bg-[#9b642f] transition-transform duration-300 origin-left ${activeSection === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    }`}
+                ></span>
+              </a>
+            ))}
           </div>
 
-          {/* MOBILE MENU ICON */}
+          <a
+            href="/resume.pdf"
+            className="group hidden h-14 items-center gap-3 rounded-2xl bg-[#8b5727] px-7 text-base font-semibold text-white shadow-[0_14px_30px_rgba(139,87,39,0.25)] transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-[#73451f] xl:flex"
+          >
+            <FiDownload className="text-xl" />
+            Download Resume
+            <FiArrowRight className="text-xl transition-transform duration-300 ease-out group-hover:translate-x-1" />
+          </a>
+
           <button
-            className="sm:hidden text-2xl text-slate-200"
+            type="button"
+            aria-label="Open navigation menu"
+            className="absolute right-5 top-1/2 -translate-y-1/2 rounded-full border border-[#8b5727]/25 bg-white/70 p-3 text-2xl text-[#8b5727] shadow-sm sm:right-8 lg:hidden"
             onClick={() => setOpen(true)}
           >
             <FiMenu />
           </button>
-
         </nav>
-      </header>
+      </motion.header>
 
-      {/* ===== MOBILE OVERLAY ===== */}
       <div
-        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity
-        ${open ? "opacity-100 visible" : "opacity-0 invisible"}`}
+        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity ${open ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setOpen(false)}
       />
 
-      {/* ===== MOBILE SLIDE MENU ===== */}
       <div
-        className={`fixed top-0 right-0 h-full w-[75%] max-w-xs bg-primary z-50
-        transform transition-transform duration-300
-        ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 z-50 h-full w-[82%] max-w-sm transform bg-[#fbf8f4] text-[#111827] shadow-2xl transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"
+          }`}
       >
-        {/* HEADER */}
-        <div className="flex items-center justify-between px-5 h-16 border-b border-slate-800">
-          <span className="text-textMain font-semibold">Menu</span>
+        <div className="flex h-24 items-center justify-between border-b border-[#111827]/10 px-6">
+          <img src={logoo} alt="Avinash" className="h-20 w-auto object-contain" />
           <button
-            className="text-2xl text-slate-300"
+            type="button"
+            aria-label="Close navigation menu"
+            className="rounded-full border border-[#8b5727]/25 p-3 text-2xl text-[#8b5727]"
             onClick={() => setOpen(false)}
           >
             <FiX />
           </button>
         </div>
 
-        {/* LINKS */}
-        <div className="flex flex-col gap-6 p-6 text-slate-200 text-base">
-          <a href="#about" onClick={() => setOpen(false)}>About</a>
-          <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
-          <a href="#services" onClick={() => setOpen(false)}>Services</a>
-          <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+        <div className="flex flex-col gap-1 p-6 text-base font-medium">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`rounded-xl px-4 py-3 transition-colors duration-300 ease-out hover:bg-[#8b5727]/10 hover:text-[#8b5727] ${activeSection === link.href ? "bg-[#8b5727]/10 text-[#8b5727]" : ""
+                }`}
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+
+          <a
+            href="/resume.pdf"
+            className="mt-5 flex h-14 items-center justify-center gap-3 rounded-2xl bg-[#8b5727] px-6 font-semibold text-white"
+            onClick={() => setOpen(false)}
+          >
+            <FiDownload className="text-xl" />
+            Download Resume
+          </a>
         </div>
       </div>
     </>

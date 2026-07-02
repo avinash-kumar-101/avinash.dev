@@ -1,0 +1,183 @@
+import { motion } from "framer-motion";
+import { FiChevronRight } from "react-icons/fi";
+import logoo from "../assets/logoo.png";
+
+const ease = [0.16, 1, 0.3, 1];
+
+const navLinks = [
+  { label: "Home", href: "#hero" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Services", href: "#services" },
+  { label: "Certifications", href: "#certificates" },
+  { label: "Contact", href: "#contact" },
+];
+
+const socials = [
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/avinash-kumar-dev1",
+    iconBg: "#0A66C2",
+    icon: "in",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/avinash-kumar-101",
+    iconBg: "#111827",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current text-white">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+      </svg>
+    ),
+  },
+];
+
+const Footer = () => {
+  return (
+    <footer className="relative isolate -mx-4 overflow-hidden bg-[#faf7f3] text-[#111827] sm:-mx-6 lg:left-1/2 lg:mx-0 lg:w-screen lg:-translate-x-1/2">
+      {/* Subtle top border */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#8b5727]/20 to-transparent" />
+
+      <div className="mx-auto max-w-[1240px] px-6 py-16 lg:px-10 xl:px-12">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_1fr] lg:gap-16">
+
+          {/* Col 1: Brand + tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease }}
+          >
+            {/* Script logo */}
+            <a
+              href="#hero"
+              className="inline-flex items-center transition-opacity hover:opacity-80"
+              aria-label="Avinash home"
+            >
+              <img src={logoo} alt="Avinash" className="h-28 w-auto max-w-[320px] object-contain sm:h-32" />
+            </a>
+
+            <p className="mt-5 max-w-[260px] text-sm leading-6 text-[#4b5563]">
+              Building modern web experiences with clean design and meaningful solutions.
+            </p>
+
+            {/* Sparkle + line decoration */}
+            <div className="mt-8 flex items-center gap-3">
+              <motion.span
+                animate={{ opacity: [0.4, 1, 0.4] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                className="text-xl text-[#8b5727]"
+              >
+                ✦
+              </motion.span>
+              <div className="h-px w-12 rounded-full bg-[#8b5727]/40" />
+            </div>
+          </motion.div>
+
+          {/* Col 2: Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
+            className="border-l border-[#111827]/8 pl-10 lg:pl-12"
+          >
+            <h3 className="text-base font-bold text-[#111827]">Quick Links</h3>
+            <div className="mt-2 h-0.5 w-6 rounded-full bg-[#8b5727]" />
+            <div className="mt-1.5 h-1 w-1 rounded-full bg-[#8b5727]/40 ml-0.5" />
+
+            <ul className="mt-5 space-y-2.5">
+              {navLinks.map((link) => (
+                <li key={link.label}>
+                  <motion.a
+                    href={link.href}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                    className="group flex items-center gap-2 text-sm text-[#374151] transition-colors hover:text-[#8b5727]"
+                  >
+                    <FiChevronRight
+                      size={13}
+                      className="text-[#8b5727]/50 transition-transform duration-200 group-hover:translate-x-0.5"
+                    />
+                    {link.label}
+                  </motion.a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Col 3: Let's Connect */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: 0.2, ease }}
+          >
+            <h3 className="text-base font-bold text-[#111827]">Let's Connect</h3>
+            <div className="mt-2 h-0.5 w-6 rounded-full bg-[#8b5727]" />
+            <div className="mt-1.5 h-1 w-1 rounded-full bg-[#8b5727]/40 ml-0.5" />
+
+            <p className="mt-5 max-w-[240px] text-sm leading-6 text-[#4b5563]">
+              I'm always open to new opportunities and collaborations.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              {socials.map((s) => (
+                <motion.a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -3, boxShadow: "0 8px 20px rgba(17,24,39,0.12)" }}
+                  transition={{ duration: 0.2 }}
+                  className="flex flex-col items-center gap-2 rounded-2xl border border-[#111827]/8 bg-white px-5 py-4 shadow-sm transition-all duration-200 hover:border-[#8b5727]/20"
+                >
+                  <div
+                    className="flex h-11 w-11 items-center justify-center rounded-xl text-sm font-bold text-white"
+                    style={{ backgroundColor: s.iconBg }}
+                  >
+                    {typeof s.icon === "string" ? s.icon : s.icon}
+                  </div>
+                  <span className="text-xs font-semibold text-[#374151]">{s.label}</span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-[#111827]/6">
+        <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-between gap-4 px-6 py-5 sm:flex-row lg:px-10 xl:px-12">
+          <p className="text-sm text-[#6b7280]">
+            © 2026 Avinash Kumar. All rights reserved.
+          </p>
+
+          <motion.span
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="text-lg text-[#8b5727]"
+          >
+            ✦
+          </motion.span>
+
+          <p className="text-sm text-[#6b7280]">
+            Designed &amp; Developed by{" "}
+            <a
+              href="https://github.com/avinash-kumar-101"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#8b5727] transition-opacity hover:opacity-80"
+            >
+              Avinash Kumar
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
