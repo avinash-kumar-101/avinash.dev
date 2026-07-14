@@ -781,12 +781,7 @@ const Certificates = () => {
             ref={heroRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{
-              position: "relative",
-              width: 580,
-              height: 480,
-              flexShrink: 0,
-            }}
+            className="hidden lg:block relative w-[580px] h-[480px] shrink-0"
           >
             {/* ── SECTION 3: Dashed Circular Decoration — slow continuous rotation ── */}
             <motion.svg

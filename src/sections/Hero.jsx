@@ -239,7 +239,7 @@ const Hero = () => {
               <span>Kumar</span>
             </motion.h1>
 
-            <motion.div variants={itemVariants} className="mt-5 flex max-w-full flex-nowrap items-center gap-x-3 overflow-visible font-display text-[clamp(1.1rem,1.35vw,1.75rem)] font-semibold leading-tight text-[#151515]">
+            <motion.div variants={itemVariants} className="mt-5 flex max-w-full flex-wrap sm:flex-nowrap items-center gap-x-3 gap-y-2 overflow-visible font-display text-[clamp(1.1rem,1.35vw,1.75rem)] font-semibold leading-tight text-[#151515]">
               <span className="flex min-w-0 shrink-0 flex-nowrap items-center gap-x-2 whitespace-nowrap">
                 Full-Stack
                 <span className="relative top-1 font-script text-[clamp(2.05rem,2.65vw,3rem)] font-normal text-[#8b5727]">

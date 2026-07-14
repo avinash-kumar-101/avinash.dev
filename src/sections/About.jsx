@@ -234,12 +234,12 @@ const About = () => {
 
             <div className="mt-12 flex flex-col items-center">
               <div className="flex w-full items-center justify-center gap-4 sm:gap-5">
-                <div className="h-px w-[90px] bg-black/[0.12] sm:w-[110px] rounded-full" />
+                <div className="h-px flex-1 max-w-[90px] bg-black/[0.12] sm:max-w-[110px] rounded-full" />
                 <h3 className="text-sm font-semibold tracking-[0.3px] text-[#8b5727]">Connect With Me</h3>
-                <div className="h-px w-[90px] bg-black/[0.12] sm:w-[110px] rounded-full" />
+                <div className="h-px flex-1 max-w-[90px] bg-black/[0.12] sm:max-w-[110px] rounded-full" />
               </div>
               
-              <div className="mt-8 flex gap-8 justify-center">
+              <div className="mt-8 flex gap-4 sm:gap-8 justify-center">
                 <a
                   href="https://github.com/avinash-kumar-101"
                   target="_blank"

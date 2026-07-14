@@ -216,15 +216,14 @@ const Experience = () => {
           >
             <div className="absolute -right-6 -top-9 h-24 w-24 rounded-full bg-[#EAE3DB]/75" />
             <div className="absolute -bottom-10 left-10 h-40 w-40 rounded-full bg-[#EAE3DB]/55" />
-            <div className="relative grid grid-cols-3 rounded-[24px] border border-[#EAE3DB] bg-white/95 shadow-[0_24px_60px_rgba(111,78,50,0.13)]">
+            <div className="relative grid grid-cols-1 sm:grid-cols-3 rounded-[24px] border border-[#EAE3DB] bg-white/95 shadow-[0_24px_60px_rgba(111,78,50,0.13)] divide-y sm:divide-y-0 sm:divide-x divide-[#EAE3DB]">
               {stats.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
                   <div
                     key={item.label}
-                    className={`flex min-h-[210px] flex-col items-center justify-center px-5 text-center ${index > 0 ? "border-l border-[#EAE3DB]" : ""
-                      }`}
+                    className="flex min-h-[160px] sm:min-h-[210px] flex-col items-center justify-center px-5 py-6 sm:py-0 text-center"
                   >
                     <div className="mb-5 flex h-[72px] w-[72px] items-center justify-center rounded-full bg-[#F1ECE6] text-[#9A4F1A] relative">
                       {item.label === "Building" ? (

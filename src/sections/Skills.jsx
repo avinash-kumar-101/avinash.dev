@@ -214,7 +214,7 @@ const Skills = () => {
                   
                   {/* Grid Skills - using 1px gap for inner borders */}
                   <div className="bg-gray-100/60 w-full mt-1">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-[1px]">
+                    <div className="grid grid-cols-1 min-[400px]:grid-cols-2 sm:grid-cols-3 gap-[1px]">
                       {cat.skills.map((skill, si) => (
                         <motion.div 
                           key={si}
