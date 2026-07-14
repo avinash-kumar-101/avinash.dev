@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiDownload, FiMenu, FiX, FiArrowRight } from "react-icons/fi";
-import logoo from "../../assets/logoo.png";
+import logoo from "../../assets/logoo.webp";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -43,7 +43,7 @@ function Navbar() {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
             ? "bg-[#fbf8f4]/80 shadow-[0_8px_30px_rgba(17,24,39,0.08)] backdrop-blur-xl border-b border-[#111827]/10 py-0"
             : "bg-[#faf7f2]/0 border-transparent py-2"
@@ -67,22 +67,40 @@ function Navbar() {
                   }`}
               >
                 {link.label}
-                <span
-                  className={`absolute inset-x-0 -bottom-1 h-[2px] bg-[#9b642f] transition-transform duration-300 origin-left ${activeSection === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                    }`}
-                ></span>
+                {activeSection === link.href ? (
+                  <motion.span
+                    layoutId="nav-active-underline"
+                    className="absolute inset-x-0 -bottom-1 h-[2px] bg-[#9b642f] block"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ transformOrigin: "left" }}
+                  />
+                ) : (
+                  <span
+                    className="absolute inset-x-0 -bottom-1 h-[2px] bg-[#9b642f] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left block"
+                  />
+                )}
               </a>
             ))}
           </div>
 
-          <a
+          <motion.a
             href="/resume.pdf"
-            className="group hidden h-14 items-center gap-3 rounded-2xl bg-[#8b5727] px-7 text-base font-semibold text-white shadow-[0_14px_30px_rgba(139,87,39,0.25)] transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-[#73451f] xl:flex"
+            className="group hidden h-14 items-center gap-3 rounded-2xl bg-[#8b5727] px-7 text-base font-semibold text-white shadow-[0_14px_30px_rgba(139,87,39,0.25)] transition-colors duration-300 ease-out hover:bg-[#73451f] xl:flex"
+            whileHover={{ y: -2, boxShadow: "0 20px 44px rgba(139,87,39,0.35)" }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
             <FiDownload className="text-xl" />
             Download Resume
-            <FiArrowRight className="text-xl transition-transform duration-300 ease-out group-hover:translate-x-1" />
-          </a>
+            <motion.span
+              className="inline-flex"
+              animate={{ x: [0, 6, 0] }}
+              transition={{ duration: 0.72, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.8 }}
+            >
+              <FiArrowRight className="text-xl" />
+            </motion.span>
+          </motion.a>
 
           <button
             type="button"

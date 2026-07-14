@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-    <link rel="shortcut icon" href="/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="shortcut icon" href="/favicon.webp" />
+    <link rel="apple-touch-icon" href="/favicon.webp" />
+    <link rel="preload" href="/avatar/hero-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -28,7 +28,7 @@
       property="og:description"
       content="Full-Stack Developer building modern, scalable web apps and AI-powered solutions."
     />
-    <meta property="og:image" content="/favicon.png" />
+    <meta property="og:image" content="/favicon.webp" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,15 +37,23 @@
       name="twitter:description"
       content="Full-Stack Developer building modern, scalable web apps and AI-powered solutions."
     />
-    <meta name="twitter:image" content="/favicon.png" />
+    <meta name="twitter:image" content="/favicon.webp" />
 
     <!-- Google Fonts: script + display -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

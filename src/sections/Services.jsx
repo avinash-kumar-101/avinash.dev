@@ -139,7 +139,7 @@ const TechPill = ({ t }) => {
               initial={{ scale: 0, opacity: 0.3 }}
               animate={{ scale: 2.5, opacity: 0 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="absolute rounded-full bg-white pointer-events-none"
               style={{
                 top: ripple.y,
@@ -183,28 +183,28 @@ const services = [
     title: "Full-Stack Web Development",
     desc: "Building modern, scalable, and high-performance web applications using the MERN stack and Next.js.",
     tech: ["React", "Next.js", "Node.js", "MongoDB"],
-    imagePath: "/services/Web Development.png",
+    imagePath: "/services/Web Development.webp",
   },
   {
     icon: "🤖",
     title: "AI Integrations",
     desc: "Integrating AI models like OpenAI and Gemini to build intelligent features, chatbots, and automation solutions.",
     tech: ["OpenAI", "Gemini", "LangChain", "AI"],
-    imagePath: "/services/AI Integrations.png",
+    imagePath: "/services/AI Integrations.webp",
   },
   {
     icon: "{}",
     title: "REST API Development",
     desc: "Designing secure, efficient, and well-documented REST APIs with authentication and database integration.",
     tech: ["Express.js", "JWT", "PostgreSQL", "Redis"],
-    imagePath: "/services/API Development.png",
+    imagePath: "/services/API Development.webp",
   },
   {
     icon: "📱",
     title: "Responsive UI Development",
     desc: "Crafting clean, responsive, and accessible user interfaces using Tailwind CSS and modern UI principles.",
     tech: ["Tailwind CSS", "Framer Motion", "Shadcn UI"],
-    imagePath: "/services/Responsive UI Development.png",
+    imagePath: "/services/Responsive UI Development.webp",
   },
 ];
 
@@ -268,8 +268,8 @@ const ServiceCard = ({ service, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
+      viewport={{ once: true, margin: "50px" }}
+      transition={{ duration: 0.5, delay: index * 0.12, ease: "easeOut" }}
       whileHover="hover"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -301,11 +301,13 @@ const ServiceCard = ({ service, index }) => {
         <motion.img
           src={service.imagePath}
           alt={service.title}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover object-center"
           variants={{
             hover: { scale: 1.05 }
           }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           style={{ imageRendering: "high-quality" }}
         />
 
@@ -393,8 +395,8 @@ const Services = () => {
       id="services"
       initial={{ opacity: 0, filter: "blur(8px)" }}
       whileInView={{ opacity: 1, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="relative isolate -mx-4 scroll-mt-24 overflow-hidden bg-[#f8f4ee] px-5 pt-20 pb-24 text-[#111827] sm:-mx-6 sm:px-8 lg:left-1/2 lg:mx-0 lg:w-screen lg:-translate-x-1/2 lg:px-10 lg:pt-28 lg:pb-32 xl:px-12"
     >
       {/* Subtle Breathing Radial Background */}
@@ -442,7 +444,7 @@ const Services = () => {
           key={i}
           aria-hidden="true"
           animate={{ opacity: [0.2, 0.7, 0.2], scale: [1, 1.2, 1] }}
-          transition={{ duration: 3 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+          transition={{ duration: 3 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
           className="absolute text-lg text-[#8b5727]/30 pointer-events-none select-none"
           style={{ left: `${x}%`, top: `${y}%` }}
         >
@@ -458,8 +460,8 @@ const Services = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, delay: 0, ease: "easeOut" }}
               className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#8b5727]"
             >
               - Services
@@ -469,8 +471,8 @@ const Services = () => {
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                 className="block"
               >
                 What I
@@ -478,8 +480,8 @@ const Services = () => {
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.5, delay: 0.22, ease: "easeOut" }}
                 className="relative mt-1 block w-fit font-script text-[4rem] font-normal leading-none text-[#8b5727] sm:text-[5rem] lg:text-[4.5rem] xl:text-[5rem]"
               >
                 Build.
@@ -496,8 +498,8 @@ const Services = () => {
                     strokeLinecap="round"
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ duration: 1.6, ease: "easeInOut", delay: 0.5 }}
+                    viewport={{ once: true, margin: "50px" }}
+                    transition={{ duration: 1.6, ease: "easeInOut", delay: 0.3 }}
                   />
                 </svg>
               </motion.span>
@@ -506,8 +508,8 @@ const Services = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               className="mt-5 max-w-sm text-sm leading-6 text-[#4b5563] sm:text-base sm:leading-7"
             >
               I turn ideas into modern, scalable and intelligent digital solutions that create real impact.
@@ -560,7 +562,7 @@ const Services = () => {
               {/* ✦ Right sparkle — between AI Assistant and mockup */}
               <motion.span
                 animate={{ opacity: [0.4, 1, 0.4], scale: [0.85, 1.2, 0.85] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
                 className="pointer-events-none absolute select-none text-[#f97316]"
                 style={{ top: "20%", left: "64%", fontSize: "18px" }}
               >✦</motion.span>
@@ -606,7 +608,7 @@ const Services = () => {
                 <motion.span
                   animate={{ rotate: [0, -12, 10, -6, 0] }}
                   transition={{
-                    duration: 0.9,
+                    duration: 0.6,
                     ease: "easeInOut",
                     repeat: Infinity,
                     repeatDelay: 7,
@@ -733,7 +735,7 @@ const Services = () => {
                         fill="url(#chartGlowPremium)" 
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "50px" }}
                         transition={{ duration: 1.3, ease: "easeOut" }}
                       />
                       
@@ -747,7 +749,7 @@ const Services = () => {
                         strokeLinejoin="round" 
                         initial={{ pathLength: 0 }}
                         whileInView={{ pathLength: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "50px" }}
                         transition={{ duration: 1.3, ease: "easeOut" }}
                       />
 
@@ -764,10 +766,10 @@ const Services = () => {
                           pathOffset: [0, 1],
                           opacity: [0, 0.6, 0.6, 0]
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "50px" }}
                         transition={{
-                          pathOffset: { duration: 1, ease: "linear", repeat: Infinity, repeatDelay: 7, delay: 2 },
-                          opacity: { duration: 1, times: [0, 0.1, 0.9, 1], ease: "linear", repeat: Infinity, repeatDelay: 7, delay: 2 }
+                          pathOffset: { duration: 0.6, ease: "linear", repeat: Infinity, repeatDelay: 7, delay: 1.2 },
+                          opacity: { duration: 0.6, times: [0, 0.1, 0.9, 1], ease: "linear", repeat: Infinity, repeatDelay: 7, delay: 1.2 }
                         }}
                         style={{ filter: "blur(1.5px)" }}
                       />
@@ -776,22 +778,22 @@ const Services = () => {
                       <motion.circle cx="100" cy="50" r="3.5" fill="white" stroke="#8b5cf6" strokeWidth="2"
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 1.3, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "50px" }}
+                        transition={{ duration: 0.54, delay: 0.78, ease: "easeOut" }}
                         style={{ transformOrigin: "100px 50px" }}
                       />
                       <motion.circle cx="200" cy="30" r="3.5" fill="white" stroke="#8b5cf6" strokeWidth="2"
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 1.35, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "50px" }}
+                        transition={{ duration: 0.54, delay: 0.82, ease: "easeOut" }}
                         style={{ transformOrigin: "200px 30px" }}
                       />
                       <motion.circle cx="300" cy="50" r="3.5" fill="white" stroke="#8b5cf6" strokeWidth="2"
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 1.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "50px" }}
+                        transition={{ duration: 0.54, delay: 0.84, ease: "easeOut" }}
                         style={{ transformOrigin: "300px 50px" }}
                       />
                       
@@ -799,8 +801,8 @@ const Services = () => {
                       <motion.circle cx="400" cy="20" r="3.5" fill="white" stroke="#8b5cf6" strokeWidth="2"
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 1.45, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "50px" }}
+                        transition={{ duration: 0.54, delay: 0.88, ease: "easeOut" }}
                         style={{ transformOrigin: "400px 20px" }}
                       />
                       
@@ -808,10 +810,10 @@ const Services = () => {
                       <motion.circle cx="400" cy="20" r="3.5" fill="white" stroke="#8b5cf6" strokeWidth="2"
                         initial={{ opacity: 0, scale: 1 }}
                         whileInView={{ opacity: [0, 0.75, 1, 0.75], scale: [1, 1, 1.2, 1] }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "50px" }}
                         transition={{
-                          opacity: { duration: 2.5, delay: 1.45, repeat: Infinity, ease: "easeInOut", times: [0, 0.16, 0.58, 1] },
-                          scale: { duration: 2.5, delay: 1.45, repeat: Infinity, ease: "easeInOut", times: [0, 0.16, 0.58, 1] }
+                          opacity: { duration: 2.5, delay: 0.88, repeat: Infinity, ease: "easeInOut", times: [0, 0.16, 0.58, 1] },
+                          scale: { duration: 2.5, delay: 0.88, repeat: Infinity, ease: "easeInOut", times: [0, 0.16, 0.58, 1] }
                         }}
                         style={{ transformOrigin: "400px 20px" }}
                       />
@@ -835,7 +837,7 @@ const Services = () => {
             {/* ═══ 3. Device Mockup (Third) — right side, z-10 ═══ */}
             <motion.div
               animate={{ y: [-6, 6, -6], rotate: [-2, 2, -2] }}
-              transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
               style={{
                 position: "absolute",
                 top: "12%",
@@ -846,8 +848,10 @@ const Services = () => {
               className="rounded-[24px] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
             >
               <img
-                src="/services/Responsive UI Development.png"
+                src="/services/Responsive UI Development.webp"
                 alt="Responsive UI Devices"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover block"
               />
             </motion.div>
@@ -865,8 +869,8 @@ const Services = () => {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.7, delay: 0.1, ease }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.57, delay: 0.06, ease }}
           className="mt-16 flex flex-col items-center justify-between rounded-[2rem] bg-[#fdfaf6] border border-[#f3eee8] px-8 py-6 lg:flex-row lg:px-10"
         >
           {/* Left: Icon */}
@@ -914,7 +918,7 @@ const Services = () => {
               <motion.div
                 className="relative z-10"
                 variants={{ idle: { x: 0 }, hover: { x: 4 } }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <FiArrowRight size={16} />
               </motion.div>

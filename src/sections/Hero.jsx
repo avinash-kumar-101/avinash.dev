@@ -63,7 +63,7 @@ const Typewriter = () => {
       <span className="block">{text}</span>
       <motion.span
         animate={{ opacity: [1, 0, 1] }}
-        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 0.6, repeat: Infinity, ease: "linear" }}
         className="ml-1 inline-block h-[1.15em] w-[3px] shrink-0 bg-[#8b5727]"
       />
     </span>
@@ -124,7 +124,7 @@ const stats = [
     value: "10+",
     label: "Projects",
     note: "End-to-end development",
-    iconAnim: { scale: [1, 1.2, 1], transition: { duration: 0.4 } },
+    iconAnim: { scale: [1, 1.2, 1], transition: { duration: 0.54 } },
   },
   {
     icon: FiBookOpen,
@@ -146,7 +146,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.08,
       delayChildren: 0.1,
     },
   },
@@ -157,7 +157,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -204,14 +204,17 @@ const Hero = () => {
         <motion.figure
           initial={{ opacity: 0, x: 32 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.72, ease: "easeOut", delay: 0.12 }}
           className="relative z-10 mx-auto flex w-full min-w-0 max-w-none items-end justify-center px-0 md:absolute md:inset-y-0 md:left-[30%] md:right-0 md:w-auto md:items-stretch md:justify-end"
         >
           <div className="hero-portrait-blend relative flex aspect-[4/5] w-full max-h-[min(72vh,760px)] items-end justify-center md:h-full md:max-h-none md:w-full md:flex-1 md:aspect-auto">
             <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-[72%] bg-gradient-to-r from-[#faf7f2] via-[#faf7f2]/75 to-transparent md:block" />
             <img
-              src="/avatar/hero-portrait.png"
+              src="/avatar/hero-portrait.webp"
               alt="Avinash Kumar"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
               className="absolute inset-0 h-full w-full object-cover object-[72%_16%] md:object-[68%_24%]"
             />
           </div>
@@ -280,7 +283,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.48 }}
             className="mt-24 lg:mt-32 w-full md:max-w-[65%] lg:max-w-[55%] xl:max-w-[50%] pause-on-hover"
           >
             <p className="mb-6 text-sm font-semibold uppercase tracking-wider text-[#5f6673] text-center lg:text-left">
@@ -326,10 +329,10 @@ const Hero = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "50px" }}
             variants={{
               hidden: {},
-              visible: { transition: { staggerChildren: 0.15 } }
+              visible: { transition: { staggerChildren: 0.1 } }
             }}
             className="mt-16 lg:mt-20 grid grid-cols-1 gap-4 md:grid-cols-2 md:max-w-[92%] lg:max-w-[70%] xl:max-w-[65%] lg:grid-cols-4 lg:gap-5"
           >
@@ -341,8 +344,8 @@ const Hero = () => {
                   whileHover="hover"
                   variants={{
                     hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7, ease: "easeOut" } },
-                    hover: { y: -6, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }
+                    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.57, ease: "easeOut" } },
+                    hover: { y: -6, scale: 1.02, transition: { duration: 0.5, ease: "easeOut" } }
                   }}
                   className="group flex flex-col rounded-2xl border border-white/60 bg-white/70 px-5 py-5 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur-xl transition-colors duration-300 ease-out hover:border-white hover:bg-white/90 hover:shadow-[0_14px_40px_rgba(0,0,0,0.1)]"
                 >

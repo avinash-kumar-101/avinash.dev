@@ -116,8 +116,8 @@ const Skills = () => {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, ease }}
               className="mb-3 text-[13px] font-bold uppercase tracking-[0.2em] text-[#8b5727]"
             >
               - Skills
@@ -127,8 +127,8 @@ const Skills = () => {
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, ease }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.57, ease }}
                 className="block"
               >
                 Tools I
@@ -136,8 +136,8 @@ const Skills = () => {
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: 0.1, ease }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.57, delay: 0.06, ease }}
                 className="relative mt-2 block w-fit font-script text-[4rem] font-normal leading-none text-[#8b5727] sm:text-[5rem] lg:text-[4.5rem] xl:text-[5rem]"
               >
                 Work With.
@@ -154,16 +154,16 @@ const Skills = () => {
                     strokeLinecap="round"
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ duration: 2, ease: "easeInOut", delay: 0.3 }}
+                    viewport={{ once: true, margin: "50px" }}
+                    transition={{ duration: 2, ease: "easeInOut", delay: 0.18 }}
                   />
                 </svg>
                 {/* Accent marks */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
+                  viewport={{ once: true, margin: "50px" }}
+                  transition={{ duration: 0.5, delay: 0.48 }}
                   className="absolute -right-8 -top-4 text-[#8b5727]"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -176,8 +176,8 @@ const Skills = () => {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, delay: 0.12, ease }}
               className="mt-6 max-w-md text-sm leading-6 text-[#4b5563] sm:text-base sm:leading-7"
             >
               A curated set of technologies and tools that I use to build modern, scalable, and impactful solutions.
@@ -187,8 +187,8 @@ const Skills = () => {
             <motion.div
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+              viewport={{ once: true, margin: "50px" }}
+              variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
               className="mt-10 grid grid-cols-1 gap-6 lg:gap-8"
             >
               {skillCategories.map((cat, ci) => (
@@ -196,8 +196,8 @@ const Skills = () => {
                   key={ci}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.6, delay: ci * 0.15, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "50px" }}
+                  transition={{ duration: 0.5, delay: ci * 0.1, ease: "easeOut" }}
                   className="rounded-[1.5rem] bg-white p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100/80 transition-shadow duration-300 flex flex-col"
                 >
                   {/* Card Header */}
@@ -220,13 +220,13 @@ const Skills = () => {
                           key={si}
                           initial={{ opacity: 0, y: 15 }}
                           whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
+                          viewport={{ once: true, margin: "50px" }}
                           transition={{ duration: 0.5, delay: (ci * 0.15) + 0.3 + (si * 0.05), ease }}
                           className="bg-white flex items-center py-3.5 px-4 relative overflow-hidden group"
                         >
                           <motion.div 
                             whileHover={{ scale: 1.05, y: -2 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: 0.5 }}
                             className="flex items-center gap-3 w-full z-10"
                           >
                             <div className="flex items-center justify-center shrink-0 w-6">
@@ -249,8 +249,8 @@ const Skills = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8, delay: 0.15, ease }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
             className="relative hidden lg:flex lg:items-center lg:justify-center mt-10 lg:mt-0"
           >
             <motion.div 
@@ -287,8 +287,8 @@ const Skills = () => {
                       <motion.div
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.5 + (i * 0.12), ease: springEase }}
+                        viewport={{ once: true, margin: "50px" }}
+                        transition={{ duration: 0.5, delay: 0.19 + (i * 0.07), ease: springEase }}
                       >
                         <motion.div
                           className="flex flex-col items-center gap-1.5"
@@ -332,8 +332,8 @@ const Skills = () => {
                       <motion.div
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.7 + (i * 0.15), ease: springEase }}
+                        viewport={{ once: true, margin: "50px" }}
+                        transition={{ duration: 0.5, delay: 0.26 + (i * 0.1), ease: springEase }}
                       >
                         <motion.div
                           className="flex flex-col items-center gap-1.5"
@@ -355,8 +355,8 @@ const Skills = () => {
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.4, ease: springEase }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.57, delay: 0.24, ease: springEase }}
                 className="absolute z-10"
               >
                 <motion.div
@@ -381,8 +381,8 @@ const Skills = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30, x: "-50%" }}
                 whileInView={{ opacity: 1, y: 0, x: "-50%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 1.1, ease: springEase }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.57, delay: 0.66, ease: springEase }}
                 className="absolute -bottom-16 left-1/2 w-[90%] max-w-[420px] rounded-2xl bg-white px-7 py-5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100/80 z-20"
               >
                 <div className="flex items-start gap-4">
@@ -401,8 +401,8 @@ const Skills = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.5, delay: 0.06, ease }}
           className="mt-16 lg:mt-24 flex flex-col md:flex-row items-center gap-4 md:gap-8 rounded-[2.5rem] border border-gray-100/50 bg-white px-8 py-5 shadow-[0_4px_25px_rgb(0,0,0,0.03)]"
         >
           <div className="flex items-center gap-3 shrink-0 md:pr-4">
@@ -423,8 +423,8 @@ const Skills = () => {
                 key={i} 
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + (i * 0.05), ease: springEase }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.54, delay: 0.12 + (i * 0.04), ease: springEase }}
               >
                 <motion.div 
                   whileHover={{ scale: 1.05, y: -3 }}

@@ -12,7 +12,7 @@ const ease = [0.16, 1, 0.3, 1];
 
 const stats = [
   { value: "5+", label: "Experiences", icon: FiBriefcase },
-  { value: "2024", label: "Started", icon: FiCalendar },
+  { value: "2022", label: "Started", icon: FiCalendar },
   { value: "Present", label: "Building", icon: FaRocket },
 ];
 
@@ -24,7 +24,7 @@ const experiences = [
     duration: "Mar 2026 - Present",
     location: "Chandigarh, India",
     type: "On-site",
-    logo: "/experience/viralstan.png",
+    logo: "/experience/viralstan.webp",
     logoAlt: "Viralstan logo",
     logoClass: "max-h-[68px] max-w-[158px]",
     points: [
@@ -39,7 +39,7 @@ const experiences = [
     duration: "Jan 2026 - May 2026",
     location: "Sahibzada Ajit Singh Nagar, Punjab, India",
     type: "Hybrid",
-    logo: "/experience/webtechfly.png",
+    logo: "/experience/webtechfly.webp",
     logoAlt: "WEBTECHFLY logo",
     logoClass: "max-h-[106px] max-w-[136px]",
     points: [
@@ -56,7 +56,7 @@ const experiences = [
     duration: "Jun 2025 - Aug 2025",
     location: "India",
     type: "Remote",
-    logo: "/experience/celebal.png",
+    logo: "/experience/celebal.webp",
     logoAlt: "Celebal Technologies logo",
     logoClass: "max-h-[110px] max-w-[136px]",
     points: [
@@ -73,7 +73,7 @@ const experiences = [
     duration: "May 2025 - Jun 2025",
     location: "India",
     type: "Remote",
-    logo: "/experience/highradius.png",
+    logo: "/experience/highradius.webp",
     logoAlt: "HighRadius logo",
     logoClass: "max-h-[108px] max-w-[134px]",
     points: [
@@ -90,7 +90,7 @@ const experiences = [
     duration: "Jun 2024 - Jun 2024",
     location: "Hyderabad, India",
     type: "Remote",
-    logo: "/experience/hacker-central.png",
+    logo: "/experience/hacker-central.webp",
     logoAlt: "Hacker Central logo",
     logoClass: "max-h-[116px] max-w-[140px]",
     points: [
@@ -151,7 +151,7 @@ const Experience = () => {
             <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.5, ease }}
               className="mb-9 text-sm font-bold uppercase tracking-[0.2em] text-[#8b5727]"
             >
@@ -162,8 +162,8 @@ const Experience = () => {
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, ease }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.57, ease }}
                 className="block"
               >
                 My Professional
@@ -171,8 +171,8 @@ const Experience = () => {
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: 0.1, ease }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.57, delay: 0.06, ease }}
                 className="relative mt-2 inline-block font-script text-[clamp(4rem,7.5vw,7rem)] font-normal tracking-normal text-[#8b5727]"
               >
                 Journey.
@@ -189,8 +189,8 @@ const Experience = () => {
                     strokeLinecap="round"
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ duration: 1.5, ease: "easeInOut", delay: 0.3 }}
+                    viewport={{ once: true, margin: "50px" }}
+                    transition={{ duration: 1.5, ease: "easeInOut", delay: 0.18 }}
                   />
                 </svg>
               </motion.span>
@@ -199,8 +199,8 @@ const Experience = () => {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, delay: 0.12, ease }}
               className="mt-12 max-w-[31rem] text-lg leading-8 text-[#6B7280]"
             >
               Internships, collaborations, and hands-on experience that helped me grow as a developer.
@@ -210,8 +210,8 @@ const Experience = () => {
           <motion.div
             initial={{ opacity: 0, y: 24, scale: 0.97 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.1, ease }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.57, delay: 0.06, ease }}
             className="relative mx-auto w-full max-w-[560px] lg:mx-0 lg:justify-self-end"
           >
             <div className="absolute -right-6 -top-9 h-24 w-24 rounded-full bg-[#EAE3DB]/75" />
@@ -289,11 +289,11 @@ const Experience = () => {
                               {/* Smoke puffs */}
                               <motion.circle cx="12" cy="48" r="5" fill="rgba(154,79,26,0.2)" filter="url(#smokeBlur)"
                                 animate={{ r: [4, 10], opacity: [0.4, 0] }}
-                                transition={{ duration: 1, repeat: Infinity, ease: "easeOut" }}
+                                transition={{ duration: 0.6, repeat: Infinity, ease: "easeOut" }}
                               />
                               <motion.circle cx="8" cy="52" r="4" fill="rgba(154,79,26,0.15)" filter="url(#smokeBlur)"
                                 animate={{ r: [3, 9], opacity: [0.35, 0] }}
-                                transition={{ duration: 1.2, repeat: Infinity, ease: "easeOut", delay: 0.3 }}
+                                transition={{ duration: 0.72, repeat: Infinity, ease: "easeOut", delay: 0.18 }}
                               />
                               <defs>
                                 <radialGradient id="flameGrad" cx="0.5" cy="0.3">
@@ -331,8 +331,8 @@ const Experience = () => {
                 key={exp.company}
                 initial={{ opacity: 0, y: 42 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-70px" }}
-                transition={{ duration: 0.6, delay: index * 0.08, ease }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.5, delay: index * 0.05, ease }}
                 className="relative pl-[48px] md:pl-[52px]"
               >
                 <span
@@ -342,8 +342,8 @@ const Experience = () => {
                 <motion.div
                   initial={{ scale: 0.72 }}
                   whileInView={{ scale: [0.72, 1.16, 1] }}
-                  viewport={{ once: true, margin: "-70px" }}
-                  transition={{ duration: 0.6, delay: index * 0.08, ease }}
+                  viewport={{ once: true, margin: "50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.05, ease }}
                   className="absolute left-[2px] top-1/2 z-10 h-4 w-4 -translate-y-1/2 rounded-full bg-[#9A4F1A] shadow-[0_0_0_7px_rgba(154,79,26,0.08)] md:left-[1px] md:h-[18px] md:w-[18px]"
                 />
 
@@ -359,6 +359,8 @@ const Experience = () => {
                     <img
                       src={exp.logo}
                       alt={exp.logoAlt}
+                      loading="lazy"
+                      decoding="async"
                       className={`h-auto w-auto object-contain ${exp.logoClass}`}
                     />
                   </div>

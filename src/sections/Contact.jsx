@@ -58,7 +58,7 @@ const EnvelopeIllustration = () => (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
       className="absolute inset-0 rounded-full"
       style={{
         background: "radial-gradient(circle, rgba(234,219,201,0.55) 0%, rgba(248,244,238,0.2) 65%, transparent 100%)",
@@ -85,7 +85,7 @@ const EnvelopeIllustration = () => (
       <motion.span
         key={i}
         animate={{ opacity: [0.3, 1, 0.3], scale: [1, 1.15, 1] }}
-        transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
+        transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.24 }}
         style={{
           position: "absolute",
           top: s.top,
@@ -215,10 +215,15 @@ const Contact = () => {
     setLoading(true);
     emailjs
       .send(
-        "service_n8brfo6",
-        "template_vquagj7",
-        { from_name: form.name, from_email: form.email, message: form.message },
-        "17MNa_EjgvseTCVvo"
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        { 
+          from_name: form.name, 
+          from_email: form.email, 
+          subject: form.subject,
+          message: form.message 
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setLoading(false);
@@ -238,8 +243,10 @@ const Contact = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease }}
-      className="relative isolate -mx-4 scroll-mt-24 overflow-hidden bg-[#faf7f4] px-5 pt-20 pb-24 text-[#111827] sm:-mx-6 sm:px-8 lg:left-1/2 lg:mx-0 lg:w-screen lg:-translate-x-1/2 lg:px-10 lg:pt-28 lg:pb-32 xl:px-12"
+      className="relative isolate -mx-4 scroll-mt-24 overflow-hidden bg-[#f8f4ee] px-5 pt-20 pb-24 text-[#111827] sm:-mx-6 sm:px-8 lg:left-1/2 lg:mx-0 lg:w-screen lg:-translate-x-1/2 lg:px-10 lg:pt-28 lg:pb-32 xl:px-12"
     >
+      {/* Top fade to seamlessly blend with section above */}
+      <div className="absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-[#f8f4ee] to-transparent pointer-events-none" />
       <div className="relative z-10 mx-auto max-w-[1240px]">
 
         {/* ── HERO SECTION ───────────────────────────────────────── */}
@@ -248,8 +255,8 @@ const Contact = () => {
             <motion.p
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, ease, delay: 0.1 }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, ease, delay: 0.06 }}
               className="mb-3 text-[13px] font-bold uppercase tracking-[0.2em] text-[#8b5727]"
             >
               - Contact
@@ -259,8 +266,8 @@ const Contact = () => {
               <motion.span
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.6, ease, delay: 0.18 }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.5, ease, delay: 0.11 }}
                 className="block"
               >
                 Let's Create
@@ -268,8 +275,8 @@ const Contact = () => {
               <motion.span
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.6, ease, delay: 0.26 }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.5, ease, delay: 0.16 }}
                 className="block"
               >
                 Something
@@ -279,8 +286,8 @@ const Contact = () => {
               <motion.span
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.8, ease, delay: 0.41 }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.6, ease, delay: 0.25 }}
                 className="relative mt-2 block w-fit font-script text-[4rem] font-normal leading-none text-[#8b5727] sm:text-[5rem] lg:text-[4.5rem] xl:text-[5rem]"
               >
                 Together.
@@ -297,8 +304,8 @@ const Contact = () => {
                     strokeLinecap="round"
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, ease: "easeInOut", delay: 0.55 }}
+                    viewport={{ once: true, margin: "50px" }}
+                    transition={{ duration: 0.72, ease: "easeInOut", delay: 0.34 }}
                   />
                 </svg>
               </motion.span>
@@ -307,8 +314,8 @@ const Contact = () => {
             <motion.p
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, ease, delay: 0.34 }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, ease, delay: 0.2 }}
               className="mt-6 max-w-md text-sm leading-6 text-[#4b5563] sm:text-base sm:leading-7"
             >
               Have a project, opportunity, or idea in mind?<br />
@@ -319,8 +326,8 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease, delay: 0.2 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.5, ease, delay: 0.12 }}
             className="hidden lg:flex lg:items-center lg:justify-center flex-shrink-0"
           >
             <EnvelopeIllustration />
@@ -332,8 +339,8 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease, delay: 0.1 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.5, ease, delay: 0.06 }}
             style={{
               background: "#fff",
               borderRadius: 18,
@@ -397,8 +404,8 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease, delay: 0.18 }}
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.5, ease, delay: 0.11 }}
             style={{
               background: "#fff",
               borderRadius: 18,
@@ -513,9 +520,9 @@ const Contact = () => {
                         exit={{ opacity: 0, y: -10 }}
                         style={{ display: "flex", gap: 6 }}
                       >
-                        <motion.span animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 1 }}>•</motion.span>
-                        <motion.span animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 1, delay: 0.2 }}>•</motion.span>
-                        <motion.span animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 1, delay: 0.4 }}>•</motion.span>
+                        <motion.span animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 0.6 }}>•</motion.span>
+                        <motion.span animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.12 }}>•</motion.span>
+                        <motion.span animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.24 }}>•</motion.span>
                       </motion.div>
                     ) : sent ? (
                       <motion.div
@@ -549,8 +556,8 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.5, delay: 0.06, ease }}
           style={{
             background: "#fff",
             borderRadius: 18,
@@ -583,8 +590,8 @@ const Contact = () => {
               <motion.a
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.5, ease, delay: 0.15 + i * 0.1 }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.5, ease, delay: 0.1 + i * 0.1 }}
                 key={i}
                 href={item.href}
                 target="_blank"
@@ -620,8 +627,8 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, delay: 0.18, ease }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.5, delay: 0.11, ease }}
           className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center relative overflow-hidden"
           style={{
             padding: "24px 32px",

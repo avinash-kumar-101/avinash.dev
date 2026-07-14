@@ -24,7 +24,7 @@ const featuredProject = {
   tech: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "AI"],
   demo: "https://your-live-demo-url.com",
   github: "https://github.com/avinash-kumar-101/Smart-Meeting-Assistant",
-  image: "/projects/smart-meeting-assistant.png",
+  image: "/projects/smart-meeting-assistant.webp",
 };
 
 const project02 = {
@@ -40,7 +40,7 @@ const project02 = {
   tech: ["React", "TMDB API", "Tailwind CSS"],
   demo: "https://flickfinder-avi.vercel.app/",
   github: "https://github.com/avinash-kumar-101/FlickFinder",
-  image: "/projects/FlickFinder.png",
+  image: "/projects/FlickFinder.webp",
 };
 
 const project03 = {
@@ -57,7 +57,7 @@ const project03 = {
   tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
   demo: "https://avinash-portfolio-gold.vercel.app",
   github: "https://github.com/avinash-kumar-101/avinash-portfolio",
-  image: "/projects/portfolio.png",
+  image: "/projects/portfolio.webp",
 };
 
 const project04 = {
@@ -72,7 +72,7 @@ const project04 = {
     "Built reusable React components for various modules",
     "Ensured testing, debugging and performance optimization",
   ],
-  image: "/projects/ERP-Dashboard.png",
+  image: "/projects/ERP-Dashboard.webp",
 };
 
 const notableProjects = [
@@ -107,8 +107,8 @@ const Projects = () => {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, ease }}
               className="mb-3 text-[13px] font-bold uppercase tracking-[0.2em] text-[#8b5727]"
             >
               - PROJECTS
@@ -118,8 +118,8 @@ const Projects = () => {
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, ease }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.57, ease }}
                 className="block"
               >
                 Things I've
@@ -127,8 +127,8 @@ const Projects = () => {
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: 0.1, ease }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.57, delay: 0.06, ease }}
                 className="relative mt-1 block w-fit font-script text-[4rem] font-normal leading-none text-[#8b5727] sm:text-[5rem] lg:text-[4rem] xl:text-[4.5rem]"
               >
                 Built.
@@ -145,8 +145,8 @@ const Projects = () => {
                     strokeLinecap="round"
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ duration: 1.6, ease: "easeInOut", delay: 0.3 }}
+                    viewport={{ once: true, margin: "50px" }}
+                    transition={{ duration: 1.6, ease: "easeInOut", delay: 0.18 }}
                   />
                 </svg>
               </motion.span>
@@ -155,8 +155,8 @@ const Projects = () => {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, delay: 0.12, ease }}
               className="mt-5 max-w-md text-sm leading-6 text-[#4b5563] sm:text-base sm:leading-7"
             >
               A collection of projects that reflect my learning, creativity, and problem-solving skills.
@@ -166,8 +166,8 @@ const Projects = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: 0.15, ease }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.57, delay: 0.1, ease }}
               className="mt-10 flex flex-wrap items-center gap-6 lg:gap-8"
             >
               {stats.map((s, idx) => (
@@ -211,25 +211,31 @@ const Projects = () => {
             </svg>
 
             <motion.img
-              src="/projects/smart-meeting-assistant.png"
+              src="/projects/smart-meeting-assistant.webp"
               alt="Smart Meeting Assistant"
+              loading="lazy"
+              decoding="async"
               className="absolute right-0 top-[10px] w-[85%] rounded-[1.25rem] border border-white/60 shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-10"
               animate={{ y: [-6, 6, -6] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.img
-              src="/projects/FlickFinder.png"
+              src="/projects/FlickFinder.webp"
               alt="FlickFinder"
+              loading="lazy"
+              decoding="async"
               className="absolute left-[5%] bottom-[40px] w-[45%] rounded-xl border border-white/60 shadow-[0_15px_40px_rgba(0,0,0,0.15)] z-20"
               animate={{ y: [6, -6, 6] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
             />
             <motion.img
-              src="/projects/portfolio.png"
+              src="/projects/portfolio.webp"
               alt="Portfolio"
+              loading="lazy"
+              decoding="async"
               className="absolute right-[10%] bottom-[10px] w-[45%] rounded-xl border border-white/60 shadow-[0_15px_40px_rgba(0,0,0,0.15)] z-30"
               animate={{ y: [-6, 6, -6] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
             />
           </div>
         </div>
@@ -238,8 +244,8 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, delay: 0.15, ease }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.57, delay: 0.1, ease }}
           className="group mt-16 rounded-[2rem] border border-[#111827]/6 bg-white/80 p-7 shadow-[0_8px_36px_rgba(17,24,39,0.08)] backdrop-blur lg:p-10 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(17,24,39,0.12)] transition-all duration-300 ease-out"
         >
           <div className="grid gap-8 lg:grid-cols-[1fr_1.3fr] lg:gap-12 items-center">
@@ -304,6 +310,8 @@ const Projects = () => {
               <img
                 src={featuredProject.image}
                 alt={featuredProject.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full max-w-2xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] object-cover transition-all duration-500 ease-out group-hover:shadow-[0_15px_50px_rgba(0,0,0,0.18)]"
               />
             </div>
@@ -317,8 +325,8 @@ const Projects = () => {
               key={proj.number}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.7, delay: index * 0.15, ease }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.57, delay: index * 0.1, ease }}
               className="group flex flex-col justify-between overflow-hidden rounded-[2rem] border border-[#111827]/6 bg-white p-7 shadow-[0_4px_20px_rgba(17,24,39,0.06)] backdrop-blur transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(17,24,39,0.12)]"
             >
               {/* Top Text */}
@@ -364,7 +372,7 @@ const Projects = () => {
 
               {/* Bottom Image */}
               <div className="w-full mt-auto overflow-hidden rounded-[1.25rem]">
-                <img src={proj.image} alt={proj.title} className="w-full h-auto shadow-md border border-[#111827]/5 object-cover transition-all duration-500 ease-out group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)]" />
+                <img src={proj.image} alt={proj.title} loading="lazy" decoding="async" className="w-full h-auto shadow-md border border-[#111827]/5 object-cover transition-all duration-500 ease-out group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)]" />
               </div>
             </motion.div>
           ))}
@@ -374,8 +382,8 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.7, delay: 0.15, ease }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.57, delay: 0.1, ease }}
           className="group mt-8 rounded-3xl border border-[#111827]/6 bg-white/80 p-6 shadow-[0_4px_20px_rgba(17,24,39,0.06)] backdrop-blur lg:p-8 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(17,24,39,0.12)] transition-all duration-300 ease-out"
         >
           <div className="grid gap-8 lg:grid-cols-[1fr_1.3fr_280px] items-center">
@@ -402,7 +410,7 @@ const Projects = () => {
 
             {/* Middle Image */}
             <div className="flex items-center justify-center p-2 lg:p-4">
-              <img src={project04.image} alt="ERP Dashboard" className="w-full max-w-[460px] rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-[#111827]/5 transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)]" />
+              <img src={project04.image} alt="ERP Dashboard" loading="lazy" decoding="async" className="w-full max-w-[460px] rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-[#111827]/5 transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)]" />
             </div>
 
             {/* Right Private Box */}
@@ -427,8 +435,8 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.7, delay: 0.1, ease }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.57, delay: 0.06, ease }}
           className="mt-12"
         >
           <div className="mb-6 flex items-center gap-3">
@@ -471,8 +479,8 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, delay: 0.15, ease }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.5, delay: 0.1, ease }}
           className="mt-12 rounded-3xl bg-[#fdfaf6] border border-[#8b5727]/10 p-6 sm:px-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-between shadow-sm"
         >
           <div className="flex items-start gap-4 sm:items-center">
