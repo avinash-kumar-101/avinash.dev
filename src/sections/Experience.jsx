@@ -18,18 +18,20 @@ const stats = [
 
 const experiences = [
   {
-    role: "Information Technology Executive",
+    role: "Full Stack Developer Intern",
     company: "Viralstan",
-    badge: "Current Position",
-    duration: "Mar 2026 - Present",
+    badge: null,
+    duration: "Jan 2026 - May 2026",
     location: "Chandigarh, India",
     type: "On-site",
     logo: "/experience/viralstan.webp",
     logoAlt: "Viralstan logo",
     logoClass: "max-h-[68px] max-w-[158px]",
     points: [
-      "Working on website building and contributing to engineering tasks.",
-      "Collaborating with the team to deliver real-world solutions.",
+      "Built and maintained full-stack web applications using React.js, Node.js, Express.js and MongoDB.",
+      "Designed responsive, user-friendly interfaces using React.js while developing reusable UI components for modern web applications.",
+      "Developed secure REST APIs and collaborated with backend systems to improve application performance and reliability.",
+      "Worked with Git and GitHub to collaborate with the development team, resolve issues and deliver production-ready features.",
     ],
   },
   {
