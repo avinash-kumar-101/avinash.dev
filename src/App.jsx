@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react"
 import Navbar from "./components/layout/Navbar"
 import Hero from "./sections/Hero"
 import Preloader from "./components/ui/Preloader"
+import WhatsAppButton from "./components/ui/WhatsAppButton"
 
 // Lazy load sections below the fold
 const About = lazy(() => import("./sections/About"))
@@ -60,6 +61,8 @@ function App() {
       <Suspense fallback={null}>
         <Footer />
       </Suspense>
+
+      <WhatsAppButton />
     </div>
   )
 }
