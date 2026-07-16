@@ -3,7 +3,7 @@ import { FiChevronRight } from "react-icons/fi";
 import logoo from "../assets/logoo.webp";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
+  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
@@ -38,7 +38,7 @@ const Footer = () => {
 
   return (
     <footer className="mt-[100px] relative isolate -mx-4 overflow-hidden bg-[#faf7f3] text-[#111827] sm:-mx-6 lg:left-1/2 lg:mx-0 lg:w-screen lg:-translate-x-1/2">
-      
+
       {/* 1. & 2. PREMIUM HORIZONTAL DIVIDER & ANIMATION */}
       <motion.div
         initial={{ width: shouldReduceMotion ? "100%" : "0%" }}
@@ -68,15 +68,23 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0, ease: "easeOut" }}
             >
               {/* 5. LOGO MICRO INTERACTION */}
-              <motion.a
-                href="#hero"
-                className="inline-flex items-center group"
-                aria-label="Avinash home"
+              <motion.button
+                type="button"
+                onClick={() => {
+                  const el = document.getElementById("home");
+                  if (el) {
+                    window.history.pushState(null, "", "#home");
+                    el.scrollIntoView({ behavior: "smooth" });
+                    window.dispatchEvent(new CustomEvent("navmenu:manual_scroll", { detail: "#home" }));
+                  }
+                }}
+                className="inline-flex items-center group bg-transparent border-0 p-0 cursor-pointer"
+                aria-label="Scroll to home"
                 whileHover={shouldReduceMotion ? {} : { scale: 1.04, rotate: 1.5 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >
                 <img src={logoo} alt="Avinash" className="h-28 w-auto max-w-[320px] object-contain sm:h-32" />
-              </motion.a>
+              </motion.button>
 
               <p className="mt-5 max-w-[260px] text-sm leading-6 text-[#4b5563]">
                 Building modern web experiences with clean design and meaningful solutions.
@@ -85,9 +93,9 @@ const Footer = () => {
               {/* 9. DECORATIVE STARS */}
               <div className="mt-8 flex items-center gap-3">
                 <motion.span
-                  animate={{ 
-                    opacity: shouldReduceMotion ? 0.9 : [0.4, 0.9, 0.4], 
-                    scale: shouldReduceMotion ? 1 : [1, 1.12, 1] 
+                  animate={{
+                    opacity: shouldReduceMotion ? 0.9 : [0.4, 0.9, 0.4],
+                    scale: shouldReduceMotion ? 1 : [1, 1.12, 1]
                   }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
                   className="text-xl text-[#8b5727]"
@@ -118,6 +126,16 @@ const Footer = () => {
                       href={link.href}
                       initial="rest"
                       whileHover="hover"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const id = link.href.replace("#", "");
+                        const el = document.getElementById(id);
+                        if (el) {
+                          window.history.pushState(null, "", link.href);
+                          el.scrollIntoView({ behavior: "smooth" });
+                          window.dispatchEvent(new CustomEvent("navmenu:manual_scroll", { detail: link.href }));
+                        }
+                      }}
                       className="relative inline-flex items-center text-sm text-[#374151] hover:text-[#8b5727] cursor-pointer group"
                     >
                       {!shouldReduceMotion ? (
@@ -132,7 +150,7 @@ const Footer = () => {
                           >
                             <FiChevronRight size={14} className="text-[#8b5727]" />
                           </motion.span>
-                          
+
                           <motion.span
                             variants={{
                               rest: { x: 0 },
@@ -193,20 +211,20 @@ const Footer = () => {
                       shouldReduceMotion
                         ? { rest: { opacity: 1 }, hover: { opacity: 0.8 } }
                         : {
-                            rest: { y: 0, scale: 1 },
-                            hover: { y: -8, scale: 1.03 }
-                          }
+                          rest: { y: 0, scale: 1 },
+                          hover: { y: -8, scale: 1.03 }
+                        }
                     }
                     transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     className="relative flex flex-col items-center gap-2 rounded-2xl border border-[#111827]/8 bg-white px-5 py-4 shadow-sm"
                   >
                     {/* Premium GPU shadow & border layer */}
-                    <motion.div 
+                    <motion.div
                       className="pointer-events-none absolute inset-0 rounded-2xl border border-[#8b5727]/30 shadow-[0_16px_32px_rgba(17,24,39,0.1)]"
                       variants={shouldReduceMotion ? {} : { rest: { opacity: 0 }, hover: { opacity: 1 } }}
                       transition={{ duration: 0.2 }}
                     />
-                    
+
                     <motion.div
                       className="relative z-10 flex h-11 w-11 items-center justify-center rounded-xl text-sm font-bold text-white will-change-transform"
                       style={{ backgroundColor: s.iconBg }}
@@ -215,11 +233,11 @@ const Footer = () => {
                         shouldReduceMotion
                           ? {}
                           : {
-                              rest: { scale: 1, rotate: 0 },
-                              hover: s.label === "LinkedIn" 
-                                ? { scale: [1, 1.10, 1], transition: { duration: 0.54, ease: "easeOut" } }
-                                : { rotate: [0, 10, 0], transition: { duration: 0.54, ease: "easeOut" } }
-                            }
+                            rest: { scale: 1, rotate: 0 },
+                            hover: s.label === "LinkedIn"
+                              ? { scale: [1, 1.10, 1], transition: { duration: 0.54, ease: "easeOut" } }
+                              : { rotate: [0, 10, 0], transition: { duration: 0.54, ease: "easeOut" } }
+                          }
                       }
                     >
                       {s.icon}
@@ -246,7 +264,7 @@ const Footer = () => {
             </p>
 
             <motion.span
-              animate={{ 
+              animate={{
                 opacity: shouldReduceMotion ? 0.9 : [0.4, 0.9, 0.4],
                 scale: shouldReduceMotion ? 1 : [1, 1.12, 1]
               }}

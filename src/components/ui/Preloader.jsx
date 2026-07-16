@@ -78,11 +78,11 @@ const Preloader = () => {
         </div>
         
         {/* Branding */}
-        <div className="mt-8 flex flex-col items-center gap-2 opacity-95">
+        <div className="mt-8 flex flex-col items-center gap-2 opacity-95 px-4 text-center">
           <h2 className="font-display text-3xl font-bold tracking-tight text-textMain sm:text-4xl">
             Avinash
           </h2>
-          <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-accent sm:text-sm">
+          <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-accent sm:text-sm text-center">
             Building meaningful digital experiences...
           </p>
         </div>
